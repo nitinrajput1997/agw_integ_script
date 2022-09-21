@@ -28,7 +28,8 @@ Magma_clone () {
 
 
 Magma_branch () {
-  cd magma
+  cd
+  cd $HOME/workspace-1/magma
   echo "Give the branch name"
   read Branch
   git checkout $Branch 
@@ -46,6 +47,8 @@ Install_pre_requisites () {
   sudo apt update
   sudo apt install ./vagrant_2.2.19_x86_64.deb
   vagrant plugin install vagrant-vbguest vagrant-disksize vagrant-vbguest vagrant-mutate
+  sudo apt-get install virtualbox virtualbox-qt
+  sudo apt install python3-pip
   pip3 install --upgrade pip
   pip3 install ansible fabric3 jsonpickle requests PyYAML firebase_admin
   echo 'export PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc
